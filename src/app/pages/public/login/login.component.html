@@ -1,0 +1,65 @@
+<div id="centralizar">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <span>
+                <b>LOGIN</b>
+            </span>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (submit)="salvarUsuario()">
+
+                <label for="nome" class="form-label">DIGITE SEU NOME</label>
+                <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Nome"
+                    [ngClass]="{'is-invalid': foiEnviado && f.nome.errors || foiEnviado && adminTentandoLogarNoLugarErrado}"
+                    onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
+
+                <div *ngIf="foiEnviado && f.nome.errors && adminTentandoLogarNoLugarErrado == false"
+                    class="invalid-feedback">
+                    <div *ngIf="f.nome.errors.required">O campo nome é obrigatório</div>
+                    <div *ngIf="f.nome.errors.minlength">Nome muito curto, digite no minimo 3 caracteres
+                    </div>
+                </div>
+
+                <div *ngIf="foiEnviado && adminTentandoLogarNoLugarErrado" class="invalid-feedback">
+                    <div *ngIf="foiEnviado && adminTentandoLogarNoLugarErrado">
+                        <p> Opa, usuários admins não logam por aqui. <a href="/admin"> Clique aqui</a> caso você
+                            seja um admin
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="espacamentoEntreForm">
+                    <label for="sobrenome" class="form-label">DIGITE SEU SOBRENOME</label>
+                    <input type="text" id="sobrenome" formControlName="sobrenome" class="form-control"
+                        placeholder="Sobrenome"
+                        [ngClass]="{'is-invalid': foiEnviado && f.sobrenome.errors}"
+                        onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
+
+                    <div *ngIf="foiEnviado && f.sobrenome.errors" class="invalid-feedback">
+                        <div *ngIf="f.sobrenome.errors.required && adminTentandoLogarNoLugarErrado == false">O campo
+                            sobrenome é obrigatório</div>
+                        <div *ngIf="f.sobrenome.errors.minlength && adminTentandoLogarNoLugarErrado == false">Sobrenome
+                            muito curto, digite no minimo 3 caracteres
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="espacamentoEntreForm">
+                    <button class="btn btn-success" type="submit">
+                        Faça seu pedido
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+
+</div>
