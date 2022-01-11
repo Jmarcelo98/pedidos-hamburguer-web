@@ -4,9 +4,16 @@
 
     <div class="card text-center">
         <div class="card-header">
-            <span>
-                <b>FAÇA SEU PEDIDO</b>
-            </span>
+            <div>
+                <span>
+                    <b>FAÇA SEU PEDIDO
+                        <button type="button" class="botaoInfo" id="tooltipId" data-bs-toggle="tooltip" data-bs-placement="right"
+                            title="Sempre utilize o mesmo NOME e SOBRENOME">
+                            <i class="bi bi-info-circle-fill"></i>
+                        </button>
+                    </b>
+                </span>
+            </div>
         </div>
         <div class="card-body">
             <form [formGroup]="loginForm" (submit)="salvarUsuario()">
@@ -34,8 +41,7 @@
                 <div class="espacamentoEntreForm">
                     <label for="sobrenome" class="form-label">SEU SOBRENOME</label>
                     <input type="text" id="sobrenome" formControlName="sobrenome" class="form-control"
-                        placeholder="Ex: Marcelo"
-                        [ngClass]="{'is-invalid': foiEnviado && f.sobrenome.errors}"
+                        placeholder="Ex: Marcelo" [ngClass]="{'is-invalid': foiEnviado && f.sobrenome.errors}"
                         onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
 
                     <div *ngIf="foiEnviado && f.sobrenome.errors" class="invalid-feedback">
