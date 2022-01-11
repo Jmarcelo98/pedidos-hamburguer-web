@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Admin } from 'src/app/models/admin';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -18,7 +19,7 @@ export class LoginAdminComponent implements OnInit {
   })
 
   // usuario
-  usuario: Usuario
+  admin: Admin
 
   // alterado quando clicar em salvar usuario
   foiEnviado = false;
@@ -35,7 +36,8 @@ export class LoginAdminComponent implements OnInit {
   // validar no front
   existeError = false
 
-  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) { }
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -73,8 +75,9 @@ export class LoginAdminComponent implements OnInit {
     }
 
     await this.usuarioService.loginAdmin(admin).toPromise().then( res => {
-      console.log(res);
-      
+      this.admin = res
+      this.usuarioService.setAdmin(this.admin)
+      this.router.navigateByUrl('admin/painel')
     }).catch( err => {
       console.log(err);
       this.response = err.error

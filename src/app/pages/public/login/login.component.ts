@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
   // mostrando mensagem se for ADMIN
   adminTentandoLogarNoLugarErrado = false;
 
-  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) { }
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -43,7 +45,7 @@ export class LoginComponent implements OnInit {
     if (this.f.nome.value != null) {
       await this.verificarAdmin(this.f.nome.value)
 
-      if(this.adminTentandoLogarNoLugarErrado) {
+      if (this.adminTentandoLogarNoLugarErrado) {
         return;
       }
 
@@ -52,14 +54,24 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    
-    const newUser: Usuario = {
+
+    const usuario: Usuario = {
       id: 0,
-      nome: "",
-      sobrenome: "",
+      nome: this.f.nome.value,
+      sobrenome: this.f.sobrenome.value,
       senha: undefined,
       admin: false
     }
+
+    await this.usuarioService.loginUsuario(usuario).toPromise().then( res => {
+      this.usuario = res
+      this.usuarioService.setUsuario(this.usuario)
+      this.router.navigateByUrl('criar-pedido')
+    }).catch( err => {
+      console.log(err);
+      
+    })
+
 
   }
 

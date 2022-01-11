@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { LoginAdminComponent } from './pages/private/login-admin/login-admin.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { PainelAdminComponent } from './pages/private/painel-admin/painel-admin.component';
+import { PedidosComponent } from './pages/public/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
     LoginComponent,
     LoginAdminComponent,
     NavBarComponent,
+    PainelAdminComponent,
+    PedidosComponent,
   ],
   imports: [
     BrowserModule,
