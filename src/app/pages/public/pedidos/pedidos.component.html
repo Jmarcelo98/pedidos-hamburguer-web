@@ -1,1 +1,106 @@
-<p>pedidos works!</p>
+<div id="espacamento"></div>
+
+<div id="espacamento"></div>
+
+<form [formGroup]="pedidoForm" (ngSubmit)="fazerPedido()">
+
+    <div class="card">
+        <div class="card-header">
+            <h3>ITENS DO PEDIDO</h3>
+        </div>
+        <div class="card-body">
+
+            <h5 class="card-title">{{acrescentar}} ALFACE</h5>
+            <div class="row align-items-center">
+
+                <div class="col-2">
+                    <img src="../../../../assets/img/pedido/alface.png" alt="..." class="img-thumbnail" width="250px">
+                </div>
+
+                <div class="col">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                SIM
+                            </label>
+                        </div>
+        
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+        
+                </div>
+
+
+            </div>
+            <hr>
+            <!-- <img src="../../../../assets/img/pedido/alface.png" alt="Alface" title="Imagem ilustrativa." width="100px"> -->
+   
+            <div class="espacamentoEntreItens">
+                <h5 class="card-title">TOMATE</h5>
+                <div class="card-text">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
+                        <label class="form-check-label" for="alface">
+                            SIM
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
+                        <label class="form-check-label" for="alface">
+                            NÃO
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="espacamentoEntreItens">
+                <h5 class="card-title">BACON</h5>
+                <div class="card-text">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
+                        <label class="form-check-label" for="alface">
+                            SIM
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
+                        <label class="form-check-label" for="alface">
+                            NÃO
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-success">Fazer pedido</button>
+
+</form>
+
+<!-- 
+<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
+
+    <div class="form-check">
+        <input id="1" class="form-check-input" type="radio" value="true" formControlName="alface" checked>
+
+    </div>
+
+    <div class="form-check">
+        <input id="2" class="form-check-input" type="radio" value="false" formControlName="alface">
+        <label class="form-check-label" for="flexRadioDefault2">
+            NÃO
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-danger btn-lg btn-block">Find out gender</button>
+</form> -->
