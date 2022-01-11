@@ -1,0 +1,29 @@
+form {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+
+input {
+    width: 50%;
+}
+
+#centralizar {
+    text-align: center;
+}
+
+.espacamentoEntreForm {
+    margin-top: 2em;
+}
+
+.espacarError {
+    margin-top: 1em;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    input {
+        width: 90%;
+    }
+    
+}

@@ -1,16 +1,18 @@
+<app-nav-bar></app-nav-bar>
+
 <div id="centralizar">
 
     <div class="card text-center">
         <div class="card-header">
             <span>
-                <b>LOGIN</b>
+                <b>FAÇA SEU PEDIDO</b>
             </span>
         </div>
         <div class="card-body">
             <form [formGroup]="loginForm" (submit)="salvarUsuario()">
 
-                <label for="nome" class="form-label">DIGITE SEU NOME</label>
-                <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Nome"
+                <label for="nome" class="form-label">SEU NOME</label>
+                <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Ex: João"
                     [ngClass]="{'is-invalid': foiEnviado && f.nome.errors || foiEnviado && adminTentandoLogarNoLugarErrado}"
                     onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
 
@@ -20,7 +22,6 @@
                     <div *ngIf="f.nome.errors.minlength">Nome muito curto, digite no minimo 3 caracteres
                     </div>
                 </div>
-
                 <div *ngIf="foiEnviado && adminTentandoLogarNoLugarErrado" class="invalid-feedback">
                     <div *ngIf="foiEnviado && adminTentandoLogarNoLugarErrado">
                         <p> Opa, usuários admins não logam por aqui. <a href="/admin"> Clique aqui</a> caso você
@@ -31,9 +32,9 @@
 
 
                 <div class="espacamentoEntreForm">
-                    <label for="sobrenome" class="form-label">DIGITE SEU SOBRENOME</label>
+                    <label for="sobrenome" class="form-label">SEU SOBRENOME</label>
                     <input type="text" id="sobrenome" formControlName="sobrenome" class="form-control"
-                        placeholder="Sobrenome"
+                        placeholder="Ex: Marcelo"
                         [ngClass]="{'is-invalid': foiEnviado && f.sobrenome.errors}"
                         onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
 
@@ -50,7 +51,7 @@
 
                 <div class="espacamentoEntreForm">
                     <button class="btn btn-success" type="submit">
-                        Faça seu pedido
+                        Fazer pedido
                     </button>
                 </div>
 

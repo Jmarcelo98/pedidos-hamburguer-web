@@ -1,1 +1,71 @@
-<p>login-admin works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div id="centralizar">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <span>
+                <b>LOGIN ADMIN</b>
+            </span>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (submit)="salvarUsuario()">
+
+                <label for="nome" class="form-label">LOGIN</label>
+                <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Nome"
+                    [ngClass]="{'is-invalid': foiEnviado && f.nome.errors || foiEnviado && errorNaoAdmin || (foiEnviado && existeError)}"
+                    onkeyup="$(this).val($(this).val().replace(/[0-9]/g, '')); $(this).val($(this).val().replace(/[&!@#$%*()^`;.,\|/~´[{]/, ''));">
+
+                <div *ngIf="foiEnviado && f.nome.errors" class="invalid-feedback">
+                    <div *ngIf="f.nome.errors.required">O campo login é obrigatório</div>
+                    <div *ngIf="f.nome.errors.minlength">Login muito curto, digite no minimo 3 caracteres
+                    </div>
+                </div>
+
+                <div *ngIf="foiEnviado && errorNaoAdmin" class="invalid-feedback">
+                    <div *ngIf="foiEnviado && errorNaoAdmin">
+                        Você não é um administrador, <a href="/"> clique aqui </a> para fazer seu pedido
+                    </div>
+                </div>
+
+                <div class="espacamentoEntreForm">
+                    <label for="senha" class="form-label">SENHA</label>
+                    <input type="text" id="senha" formControlName="senha" class="form-control" placeholder="Senha"
+                        [ngClass]="{'is-invalid': foiEnviado && f.senha.errors && !errorNaoAdmin || (foiEnviado && existeError)}">
+
+                    <div *ngIf="foiEnviado && f.senha.errors && !errorNaoAdmin" class="invalid-feedback">
+                        <div *ngIf="f.senha.errors.required && !errorNaoAdmin">O campo
+                            senha é obrigatório</div>
+                        <div *ngIf="f.senha.errors.minlength && !errorNaoAdmin">Senha
+                            muito curta, digite no minimo 3 caracteres
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center espacarError">
+                    <div [ngClass]="{'is-invalid': foiEnviado && existeError}"></div>
+                    <div *ngIf="foiEnviado && existeError" class="invalid-feedback mb-3 centralizar errorMensagem">
+                        {{response}}
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn">Logar</button>
+                    </div>
+                </div>
+
+
+                <div class="espacamentoEntreForm">
+                    <button class="btn btn-success" type="submit">
+                        Faça seu pedido
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+
+</div>

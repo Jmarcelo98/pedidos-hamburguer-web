@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { LoginAdminComponent } from './pages/private/login-admin/login-admin.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LoginAdminComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
