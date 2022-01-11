@@ -30,7 +30,7 @@
 
                 <div class="espacamentoEntreForm">
                     <label for="senha" class="form-label">SENHA</label>
-                    <input type="text" id="senha" formControlName="senha" class="form-control" placeholder="Senha"
+                    <input type="password" id="senha" formControlName="senha" class="form-control" placeholder="Senha"
                         [ngClass]="{'is-invalid': foiEnviado && f.senha.errors && !errorNaoAdmin || (foiEnviado && existeError)}">
 
                     <div *ngIf="foiEnviado && f.senha.errors && !errorNaoAdmin" class="invalid-feedback">
