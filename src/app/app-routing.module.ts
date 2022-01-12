@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'criar-pedido',
     component: PedidosComponent,
-    canActivate: [AutenticacaoUsuario]
+    // canActivate: [AutenticacaoUsuario]
 
   }
 ];

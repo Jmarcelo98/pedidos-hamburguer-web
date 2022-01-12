@@ -10,14 +10,81 @@
         </div>
         <div class="card-body">
 
-            <h5 class="card-title">{{acrescentar}} ALFACE</h5>
+            <!-- CARNE -->
+            <h5 class="card-title">PONTA DA CARNE</h5>
             <div class="row align-items-center">
 
-                <div class="col-2">
-                    <img src="../../../../assets/img/pedido/alface.png" alt="..." class="img-thumbnail" width="250px">
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/pontoCarne.jpeg" alt="Ponto da carne" class="img-thumbnail">
                 </div>
 
-                <div class="col">
+                <div class="col-6 col-md-9">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='"MAL PASSDA"'
+                                formControlName="pontoCarne">
+                            <label class="form-check-label" for="pontoCarne">
+                                <span>MAL PASSADA</span>
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-2">
+                            <input type="radio" class="form-check-input" [value]='"AO PONTO"'
+                                formControlName="pontoCarne">
+                            <label class="form-check-label" for="pontoCarne">
+                                <span>AO PONTO</span>
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-2">
+                            <input type="radio" class="form-check-input" [value]='"BEM PASSADA"'
+                                formControlName="pontoCarne">
+                            <label class="form-check-label" for="pontoCarne">
+                                <span>BEM PASSADA</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM DA CARNE -->
+
+            <hr>
+
+            <!-- PÃO -->
+            <h5 class="card-title">TIPO DE PÃO</h5>
+            <div class="row align-items-center">
+
+                <!-- <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/alface.png" alt="Tipo de pão" class="img-thumbnail"
+                         >
+                </div> -->
+
+                <div class="row">
+
+                    <div class="col-3 col-md-3">
+                        <img src="../../../../assets/img/pedido/paoAustraliano.jpg" class="img-thumbnail"
+                            alt="Pão Australiano">
+                    </div>
+
+                    <div class="col-3 col-md-3">
+                        <img src="../../../../assets/img/pedido/gergelim.jpg" alt="Tipo com Gergelim" class="img-thumbnail">
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        das
+                    </div>
+
+                    <div class="col-6">
+da
+                    </div>
+
+                </div>
+
+                <!-- <div class="col-6 col-md-9">
                     <div class="card-text">
                         <div class="form-check ">
                             <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
@@ -25,7 +92,7 @@
                                 SIM
                             </label>
                         </div>
-        
+
                         <div class="form-check ">
                             <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
                             <label class="form-check-label" for="alface">
@@ -33,74 +100,179 @@
                             </label>
                         </div>
                     </div>
-        
-                </div>
 
+                </div> -->
 
             </div>
+            <!-- FIM DO PÃO -->
+
             <hr>
-            <!-- <img src="../../../../assets/img/pedido/alface.png" alt="Alface" title="Imagem ilustrativa." width="100px"> -->
-   
-            <div class="espacamentoEntreItens">
-                <h5 class="card-title">TOMATE</h5>
-                <div class="card-text">
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
-                        <label class="form-check-label" for="alface">
-                            SIM
-                        </label>
-                    </div>
 
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
-                        <label class="form-check-label" for="alface">
-                            NÃO
-                        </label>
-                    </div>
+            <!-- MOLHO -->
+            <h5 class="card-title">TIPOS DE MOLHO</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/alface.png" alt="..." class="img-thumbnail">
                 </div>
-            </div>
 
-            <div class="espacamentoEntreItens">
-                <h5 class="card-title">BACON</h5>
-                <div class="card-text">
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
-                        <label class="form-check-label" for="alface">
-                            SIM
-                        </label>
+                <div class="col-6 col-md-9">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                NÃO
+                            </label>
+                        </div>
                     </div>
 
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
-                        <label class="form-check-label" for="alface">
-                            NÃO
-                        </label>
-                    </div>
                 </div>
+
             </div>
+            <!-- FIM DO MOLHO -->
+            <hr>
+
+            <!-- BACON -->
+            <h5 class="card-title">{{acrescentar}} BACON</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/bacon.png" alt="Bacon" title="Imagem meramente ilustrativa"
+                        class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-9 mt-3">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="bacon">
+                            <label class="form-check-label" for="bacon">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="bacon">
+                            <label class="form-check-label" for="bacon">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- FIM DO BACON -->
+            <hr>
+
+            <!-- CEBOLA CARAMELIZADA -->
+            <h5 class="card-title">{{acrescentar}} CEBOLA CARAMELIZADA</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/cebolaCaramelizada.jpg" alt="Cebola Caramelizada"
+                        title="Imagem meramente ilustrativa" class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-9">
+                    <div class="card-text">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" [value]='true'
+                                formControlName="cebolaCaramelizada">
+                            <label class="form-check-label" for="cebolaCaramelizada">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input type="radio" class="form-check-input" [value]='false'
+                                formControlName="cebolaCaramelizada">
+                            <label class="form-check-label" for="cebolaCaramelizada">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- FIM DA CEBOLA CAREMELIZADA -->
+            <hr>
+
+            <!-- ALFACE -->
+            <h5 class="card-title">{{acrescentar}} ALFACE</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/alface.png" alt="Alface"
+                        title="Imagem meramente ilustrativa" class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-9">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="alface">
+                            <label class="form-check-label" for="alface">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- FIM DO ALFACE -->
+            <hr>
+
+            <!-- TOMATE -->
+            <h5 class="card-title">{{acrescentar}} TOMATE</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/tomate.png" alt="Tomate"
+                        title="Imagem meramente ilustrativa" class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-9">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="tomate">
+                            <label class="form-check-label" for="tomate">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="tomate">
+                            <label class="form-check-label" for="tomate">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- FIM DO TOMATE -->
+
         </div>
     </div>
 
+    <button type="submit" class="btn btn-success btn-lg">Fazer pedido</button>
 
-
-    <button type="submit" class="btn btn-success">Fazer pedido</button>
+    <div style="margin-bottom: 5em;"></div>
 
 </form>
-
-<!-- 
-<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
-
-    <div class="form-check">
-        <input id="1" class="form-check-input" type="radio" value="true" formControlName="alface" checked>
-
-    </div>
-
-    <div class="form-check">
-        <input id="2" class="form-check-input" type="radio" value="false" formControlName="alface">
-        <label class="form-check-label" for="flexRadioDefault2">
-            NÃO
-        </label>
-    </div>
-
-    <button type="submit" class="btn btn-danger btn-lg btn-block">Find out gender</button>
-</form> -->

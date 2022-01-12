@@ -2,10 +2,32 @@ h3 {
     margin-top: 8px;
 }
 
+hr{
+    margin: 2em 2em;
+}
+
 #espacamento {
-    margin-top: 4em;
+    margin-top: 0.5em;
+}
+
+.btn{
+    margin-top: 2em;
+    margin-left: 1em;
 }
 
 .espacamentoEntreItens {
     margin-top: 2em;
+}
+
+img {
+    width: 250px;
+    height: 175px;
+}
+
+@media screen and (max-width: 385px) {
+
+    label>span {
+        font-size: 12px;
+    }
+    
 }

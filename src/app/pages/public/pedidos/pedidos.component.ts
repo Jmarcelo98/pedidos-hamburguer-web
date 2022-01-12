@@ -11,7 +11,11 @@ export class PedidosComponent implements OnInit {
 
   // form do pedido
   pedidoForm = this.formBuilder.group({
-    alface: [true, [Validators.required]],
+    pontoCarne: ["AO PONTO"],
+    bacon: [true],
+    cebolaCaramelizada: [true],
+    alface: [true],
+    tomate: [true]
   })
 
   acrescentar = environment.ACRESCENTAR
