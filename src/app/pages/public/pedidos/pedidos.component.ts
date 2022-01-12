@@ -12,6 +12,8 @@ export class PedidosComponent implements OnInit {
   // form do pedido
   pedidoForm = this.formBuilder.group({
     pontoCarne: ["AO PONTO"],
+    pao: ["AUSTRALIANO"],
+    molho: [null],
     bacon: [true],
     cebolaCaramelizada: [true],
     alface: [true],

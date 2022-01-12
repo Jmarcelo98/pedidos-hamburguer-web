@@ -6,6 +6,20 @@ hr{
     margin: 2em 2em;
 }
 
+img {
+    width: 250px;
+    height: 175px;
+}
+
+input[type=radio] {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+label {
+    margin-top: 0.3em;
+}
+
 #espacamento {
     margin-top: 0.5em;
 }
@@ -19,9 +33,26 @@ hr{
     margin-top: 2em;
 }
 
-img {
-    width: 250px;
-    height: 175px;
+.form-check-label.pao {
+    margin-left: 0px;
+}
+
+.inline {
+    margin-left: 1.25rem;
+}
+
+@media screen and (max-width: 505px) {
+
+    label>span {
+        font-size: 12px;
+    }
+
+    .salvar {
+        margin-left: 0;
+        text-align: center;
+        margin-left: 25%;
+    }
+    
 }
 
 @media screen and (max-width: 385px) {
