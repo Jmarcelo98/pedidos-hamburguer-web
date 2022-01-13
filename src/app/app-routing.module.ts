@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'admin/painel',
     component: PainelAdminComponent,
-    canActivate: [AutenticacaoAdmin]
+    // canActivate: [AutenticacaoAdmin]
   },
   {
     path: 'criar-pedido',
