@@ -7,8 +7,13 @@ input {
     width: 50%;
 }
 
+
 #centralizar {
     text-align: center;
+}
+
+.btn-outline-secondary{
+    margin-left: 2em;
 }
 
 .espacamentoEntreForm {

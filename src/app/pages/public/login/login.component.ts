@@ -59,17 +59,16 @@ export class LoginComponent implements OnInit {
       id: 0,
       nome: this.f.nome.value,
       sobrenome: this.f.sobrenome.value,
-      senha: undefined,
       admin: false
     }
 
-    await this.usuarioService.loginUsuario(usuario).toPromise().then( res => {
+    await this.usuarioService.loginUsuario(usuario).toPromise().then(res => {
       this.usuario = res
       this.usuarioService.setUsuario(this.usuario)
       this.router.navigateByUrl('criar-pedido')
-    }).catch( err => {
+    }).catch(err => {
       console.log(err);
-      
+
     })
 
 

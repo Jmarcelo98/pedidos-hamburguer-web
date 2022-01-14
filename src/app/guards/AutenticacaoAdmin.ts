@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
+import { AdminService } from "../services/admin.service";
 import { UsuarioService } from "../services/usuario.service";
 
 @Injectable({
@@ -8,7 +9,7 @@ import { UsuarioService } from "../services/usuario.service";
 
 export class AutenticacaoAdmin implements CanActivate {
 
-    constructor(public auth: UsuarioService, public router: Router) { }
+    constructor(public auth: AdminService, public router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 

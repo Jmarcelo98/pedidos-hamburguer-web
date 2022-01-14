@@ -13,7 +13,79 @@
     </div>
 
     <div>
-        
+
     </div>
+
+</div>
+
+<div id="espacamento">
+
+    <table class="table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th scope="col">CLIENTE</th>
+                <th scope="col">CARNE</th>
+                <th scope="col">PAO</th>
+                <th scope="col">MOLHO</th>
+                <th scope="col">BACON</th>
+                <th scope="col">CEBOLA CARAMELIZADA</th>
+                <th scope="col">ALFACE</th>
+                <th scope="col">TOMATE</th>
+                <th scope="col">DATA DO PEDIDO</th>
+                <th scope="col">FINALIZAR</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let item of pedidos">
+
+                <td>{{item.usuarioDTO.nome}} {{item.usuarioDTO.sobrenome}}</td>
+                <td>{{item.carneDTO.pontoCarne}}</td>
+                <td>{{item.paoDTO.nome}}</td>
+                <td>{{item.molhoDTO.nomeMolho}}</td>
+
+                <td>
+                    <b>
+                        <div *ngIf="item.bacon">{{aceita}}</div>
+                        <div *ngIf="!item.bacon">{{recusa}}</div>
+                    </b>
+                </td>
+
+                <td>
+                    <b>
+                        <div *ngIf="item.cebolaCaramelizada">{{aceita}}</div>
+                        <div *ngIf="!item.cebolaCaramelizada">{{recusa}}</div>
+                    </b>
+                </td>
+
+                <td>
+                    <b>
+                        <div *ngIf="item.alface">{{aceita}}</div>
+                        <div *ngIf="!item.alface">{{recusa}}</div>
+                    </b>
+                </td>
+
+                <td>
+                    <b>
+                        <div *ngIf="item.tomate">{{aceita}}</div>
+                        <div *ngIf="!item.tomate">{{recusa}}</div>
+                    </b>
+                </td>
+
+                <td>{{item.dataCriacao | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+
+                <td>
+                    <button class="btn btn-success">
+                        <i class="bi bi-check-circle" title="FINALIZAR"></i>
+                    </button>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
 
 </div>

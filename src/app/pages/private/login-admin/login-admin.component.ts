@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Admin } from 'src/app/models/admin';
-import { Usuario } from 'src/app/models/usuario';
+import { AdminService } from 'src/app/services/admin.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -36,8 +36,8 @@ export class LoginAdminComponent implements OnInit {
   // validar no front
   existeError = false
 
-  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService,
-    private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private adminService: AdminService,
+    private router: Router, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
   }
@@ -74,9 +74,9 @@ export class LoginAdminComponent implements OnInit {
       admin: true
     }
 
-    await this.usuarioService.loginAdmin(admin).toPromise().then( res => {
+    await this.adminService.loginAdmin(admin).toPromise().then( res => {
       this.admin = res
-      this.usuarioService.setAdmin(this.admin)
+      this.adminService.setAdmin(this.admin)
       this.router.navigateByUrl('admin/painel')
     }).catch( err => {
       console.log(err);

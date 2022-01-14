@@ -1,3 +1,17 @@
 #espacamento {
     margin-top: 3.5em;
 }
+
+tbody>tr>td {
+    padding: 0.6em;
+    text-align: center;
+}
+
+thead>tr>th{
+    padding: 1em;
+    text-align: center;
+}
+
+.finalizar {
+    font-size: xx-large;
+}
