@@ -21,4 +21,9 @@ export class PedidoService {
     return this.httpClient.get<Pedido[]>(this.URL_API)
   }
 
+  finalizarPedido(idPedido: number) {
+    return this.httpClient.put(`${this.URL_API}/finalizar`, idPedido)
+  }
+  
+
 }

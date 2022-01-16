@@ -14,5 +14,5 @@ export interface Pedido {
     carneDTO: CarneDTO;
     paoDTO: PaoDTO;
     usuarioDTO: Usuario
-    molhoDTO: MolhoDTO;
+    molhoDTO: Array<MolhoDTO>;
 }

@@ -7,7 +7,7 @@
     </div>
 
     <div class="col">
-        <button class="btn btn-outline-secondary" title="Atualizar pedidos">
+        <button class="btn btn-outline-secondary" title="Atualizar pedidos" (click)="buscasPedidosEmEspera()">
             <i class="bi bi-arrow-clockwise"></i>
         </button>
     </div>
@@ -41,10 +41,16 @@
 
             <tr *ngFor="let item of pedidos">
 
-                <td>{{item.usuarioDTO.nome}} {{item.usuarioDTO.sobrenome}}</td>
+                <td>
+                    {{item.usuarioDTO.nome}} {{item.usuarioDTO.sobrenome}}
+                </td>
                 <td>{{item.carneDTO.pontoCarne}}</td>
                 <td>{{item.paoDTO.nome}}</td>
-                <td>{{item.molhoDTO.nomeMolho}}</td>
+
+                <div *ngFor="let molhos of item.molhoDTO">
+                    <td>{{molhos.nomeMolho}}</td>
+                </div>
+
 
                 <td>
                     <b>
@@ -77,8 +83,8 @@
                 <td>{{item.dataCriacao | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
 
                 <td>
-                    <button class="btn btn-success">
-                        <i class="bi bi-check-circle" title="FINALIZAR"></i>
+                    <button class="btn btn-success" (click)="finalizarPedido(item)">
+                        <i class="bi bi-check-circle" title="Finalizar Pedido"></i>
                     </button>
                 </td>
 
