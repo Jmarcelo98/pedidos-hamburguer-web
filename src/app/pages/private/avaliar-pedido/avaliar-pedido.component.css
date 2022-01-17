@@ -1,0 +1,16 @@
+#espacamento {
+    margin-top: 12.5em;
+}
+
+ngb-rating {
+    color: #FFC107;
+    font-size: 50px;
+}
+
+ol, ul {
+    margin-left: 33em;
+}
+
+li {
+    display: flex;
+}

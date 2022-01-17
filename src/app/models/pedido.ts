@@ -10,6 +10,7 @@ export interface Pedido {
     cebolaCaramelizada: boolean;
     dataCriacao: Date;
     tomate: boolean;
+    queijo: boolean;
     concluido: boolean;
     carneDTO: CarneDTO;
     paoDTO: PaoDTO;

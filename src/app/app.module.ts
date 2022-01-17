@@ -5,14 +5,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/public/login/login.component';
-import { LoginAdminComponent } from './pages/private/login-admin/login-admin.component';
+import { LoginAdminComponent } from './pages/public/login-admin/login-admin.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { PainelAdminComponent } from './pages/private/painel-admin/painel-admin.component';
-import { PedidosComponent } from './pages/public/pedidos/pedidos.component';
+import { PedidosComponent } from './pages/private/pedidos/pedidos.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AvaliarPedidoComponent } from './pages/private/avaliar-pedido/avaliar-pedido.component';
+import { ConfirmacaoDialogComponent } from './component/confirmacao-dialog/confirmacao-dialog.component';
+import { NgbModule, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     NavBarComponent,
     PainelAdminComponent,
     PedidosComponent,
+    AvaliarPedidoComponent,
+    ConfirmacaoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatDialogModule,
+    NgbModule,
+    // NgbRating
   ],
   providers: [],
   bootstrap: [AppComponent]

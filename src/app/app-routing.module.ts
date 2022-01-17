@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutenticacaoAdmin } from './guards/AutenticacaoAdmin';
-import { AutenticacaoUsuario } from './guards/AutenticaoUsuario';
-import { LoginAdminComponent } from './pages/private/login-admin/login-admin.component';
+import { LoginAdminComponent } from './pages/public/login-admin/login-admin.component';
 import { PainelAdminComponent } from './pages/private/painel-admin/painel-admin.component';
 import { LoginComponent } from './pages/public/login/login.component';
-import { PedidosComponent } from './pages/public/pedidos/pedidos.component';
+import { PedidosComponent } from './pages/private/pedidos/pedidos.component';
+import { AvaliarPedidoComponent } from './pages/private/avaliar-pedido/avaliar-pedido.component';
+import { AutenticacaoPedido } from './guards/AutenticacaoPedido';
 
 const routes: Routes = [
   {
@@ -19,13 +19,17 @@ const routes: Routes = [
   {
     path: 'admin/painel',
     component: PainelAdminComponent,
-    // canActivate: [AutenticacaoAdmin]
+   // canActivate: [AutenticacaoAdmin]
   },
   {
     path: 'criar-pedido',
     component: PedidosComponent,
-    // canActivate: [AutenticacaoUsuario]
-
+   // canActivate: [AutenticacaoUsuario]
+  },
+  {
+    path: 'avaliar',
+    component: AvaliarPedidoComponent,
+    canActivate: [AutenticacaoPedido]
   }
 ];
 

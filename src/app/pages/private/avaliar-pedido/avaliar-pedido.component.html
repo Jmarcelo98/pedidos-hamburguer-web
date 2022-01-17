@@ -1,0 +1,30 @@
+<div id="espacamento"></div>
+
+
+<div class="card text-center">
+    <div class="card-header">
+        Avalie seu pedido!
+    </div>
+    <div class="card-body">
+        
+        <ul>
+            <li>5 - Muito satisfeito(a)</li>
+            <li>4 - Satisfeito(a)</li>
+            <li>3 - Bom</li>
+            <li>2 - Insatisfeito(a)</li>
+            <li>1 - Muito insatisfeito(a)</li>
+        </ul>
+
+        <ngb-rating [max]="5" [(rate)]="valorAvaliacao"></ngb-rating>
+        <hr>
+        <pre>Nota: <b>{{valorAvaliacao}}</b></pre>
+
+        <button class="btn btn-primary">Avaliar</button>
+
+    </div>
+    <div class="card-footer text-muted">
+        Prezado(a)
+        <span class="text-capitalize">{{usuario.nome | lowercase}} {{usuario.sobrenome | lowercase}}, </span>
+        <span>sua avaliação é necessária.</span>
+    </div>
+</div>

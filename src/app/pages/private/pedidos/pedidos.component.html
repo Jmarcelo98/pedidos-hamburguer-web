@@ -11,7 +11,7 @@
         <div class="card-body">
 
             <!-- CARNE -->
-            <h5 class="card-title">PONTA DA CARNE</h5>
+            <h5 class="card-title"> PONTO DA CARNE </h5>
             <div class="row align-items-center">
 
                 <div class="col-6 col-md-3">
@@ -97,39 +97,88 @@
             <div class="row align-items-center">
 
                 <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/baiconnaise.jpg" alt="Molho Baiconnaise"
+                        class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-3">
                     <img src="../../../../assets/img/pedido/chipotle.jpg" alt="Molho Chipotle" class="img-thumbnail"
                         alt="Molho Chipotle">
                 </div>
 
-                <div class="col-6 col-md-3">
-                    <img src="../../../../assets/img/pedido/baiconnaise.jpg" alt="Molho Baiconnaise"
-                        class="img-thumbnail">
-                </div>
+                <!-- <div class="col-12 col-md-3">
+                    <img src="../../../../assets/img/pedido/maionese.jpg" alt="Molho Maionese" class="img-thumbnail">
+                </div> -->
             </div>
 
             <div class="row ">
 
                 <div class="col-6 col-md-3">
                     <div class="form-check ">
-                        <input type="radio" class="form-check-input" [value]='""' formControlName="molho">
-                        <label for="molho" class="inline">
-                            CHIPOTLE
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-3 col-md-6">
-                    <div class="form-check ">
-                        <input type="radio" class="form-check-input" [value]='"GERGELIM"' formControlName="molho">
-                        <label for="molho" class="inline">
+                        <input type="checkbox" class="form-check-input" [value]='"BACONNAISE"'
+                            formControlName="molhoBaconnaise">
+                        <label for="molhoBaconnaise" class="inline">
                             BACONNAISE
                         </label>
                     </div>
                 </div>
 
+                <div class="col-3 col-md-3">
+                    <div class="form-check ">
+                        <input type="checkbox" class="form-check-input" [value]='"CHIPOTLE"'
+                            formControlName="molhoChipotle">
+                        <label for="molhoChipotle" class="inline">
+                            CHIPOTLE
+                        </label>
+                    </div>
+                </div>
+
+
+                <!-- <div class="col-12 col-md-3">
+                    <div class="form-check ">
+                        <input type="radio" class="form-check-input" [value]='"GERGELIM"' formControlName="molho">
+                        <label for="molho" class="inline">
+                            MAIONESE
+                        </label>
+                    </div>
+                </div> -->
+
+
             </div>
 
             <!-- FIM DO MOLHO -->
+            <hr>
+
+            <!-- QUEIJO -->
+            <h5 class="card-title">{{acrescentar}} QUEIJO</h5>
+            <div class="row align-items-center">
+
+                <div class="col-6 col-md-3">
+                    <img src="../../../../assets/img/pedido/queijo.jpg" alt="Queijo"
+                        title="Imagem meramente ilustrativa" class="img-thumbnail">
+                </div>
+
+                <div class="col-6 col-md-9 mt-3">
+                    <div class="card-text">
+                        <div class="form-check ">
+                            <input type="radio" class="form-check-input" [value]='true' formControlName="queijo">
+                            <label class="form-check-label" for="queijo">
+                                SIM
+                            </label>
+                        </div>
+
+                        <div class="form-check mt-3">
+                            <input type="radio" class="form-check-input" [value]='false' formControlName="queijo">
+                            <label class="form-check-label" for="queijo">
+                                NÃO
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- FIM DO QUEIJO -->
             <hr>
 
             <!-- BACON -->
@@ -264,7 +313,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-success btn-lg salvar">Fazer pedido</button>
+    <button type="submit" class="btn btn-success btn-lg salvar" [disabled]="desativarBotao">Fazer pedido</button>
 
     <div style="margin-bottom: 5em;"></div>
 

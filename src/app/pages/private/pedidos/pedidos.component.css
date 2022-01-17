@@ -16,9 +16,21 @@ input[type=radio] {
     height: 1.5em;
 }
 
+input[type=checkbox] {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
 label {
     margin-top: 0.3em;
 }
+
+/* h5>span {
+    margin-left: 2em;
+    color: red;
+    
+} */
 
 #espacamento {
     margin-top: 0.5em;
