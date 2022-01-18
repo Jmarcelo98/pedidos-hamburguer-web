@@ -17,7 +17,7 @@ import { PedidosComponent } from './pages/private/pedidos/pedidos.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AvaliarPedidoComponent } from './pages/private/avaliar-pedido/avaliar-pedido.component';
 import { ConfirmacaoDialogComponent } from './component/confirmacao-dialog/confirmacao-dialog.component';
-import { NgbModule, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import { NgbModule, NgbRating } from '@ng-bootstrap/ng-bootstrap';
     ToastrModule.forRoot(),
     MatDialogModule,
     NgbModule,
-    // NgbRating
   ],
   providers: [],
   bootstrap: [AppComponent]

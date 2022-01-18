@@ -6,7 +6,20 @@
 
     <div class="card">
         <div class="card-header">
-            <h3>ITENS DO PEDIDO</h3>
+            <div class="row align-items-center">
+
+                <div class="col-9">
+                    <h3>ITENS DO PEDIDO</h3>
+                </div>
+
+                <div class="col-3">
+                    <button class="btn btn-dark" (click)="sair()">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
         </div>
         <div class="card-body">
 
@@ -21,7 +34,7 @@
                 <div class="col-6 col-md-9">
                     <div class="card-text">
                         <div class="form-check ">
-                            <input type="radio" class="form-check-input" [value]='"MAL PASSDA"'
+                            <input type="radio" class="form-check-input" [value]='"MAL PASSADA"'
                                 formControlName="pontoCarne">
                             <label class="form-check-label" for="pontoCarne">
                                 <span>MAL PASSADA</span>
@@ -313,8 +326,10 @@
         </div>
     </div>
 
+    <div style="margin-bottom: 3em;"></div>
+
     <button type="submit" class="btn btn-success btn-lg salvar" [disabled]="desativarBotao">Fazer pedido</button>
 
-    <div style="margin-bottom: 5em;"></div>
+   
 
 </form>

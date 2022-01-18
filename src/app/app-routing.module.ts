@@ -6,6 +6,8 @@ import { LoginComponent } from './pages/public/login/login.component';
 import { PedidosComponent } from './pages/private/pedidos/pedidos.component';
 import { AvaliarPedidoComponent } from './pages/private/avaliar-pedido/avaliar-pedido.component';
 import { AutenticacaoPedido } from './guards/AutenticacaoPedido';
+import { AutenticacaoAdmin } from './guards/AutenticacaoAdmin';
+import { AutenticacaoUsuario } from './guards/AutenticaoUsuario';
 
 const routes: Routes = [
   {
@@ -19,17 +21,17 @@ const routes: Routes = [
   {
     path: 'admin/painel',
     component: PainelAdminComponent,
-   // canActivate: [AutenticacaoAdmin]
+    canActivate: [AutenticacaoAdmin]
   },
   {
     path: 'criar-pedido',
     component: PedidosComponent,
-   // canActivate: [AutenticacaoUsuario]
+    canActivate: [AutenticacaoUsuario]
   },
   {
     path: 'avaliar',
     component: AvaliarPedidoComponent,
-    // canActivate: [AutenticacaoPedido]
+     canActivate: [AutenticacaoPedido]
   }
 ];
 

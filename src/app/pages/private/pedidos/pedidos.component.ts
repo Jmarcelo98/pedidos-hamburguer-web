@@ -43,7 +43,7 @@ export class PedidosComponent implements OnInit {
       this.mensagens.info("POR FAVOR, AVALIE SEU PEDIDO!")
       setTimeout(() => {
         this.router.navigate(['avaliar'])
-      }, 5000);
+      }, 3000);
 
     } else {
       this.desativarBotao = false
@@ -98,7 +98,7 @@ export class PedidosComponent implements OnInit {
     }
 
     await this.pedidoService.criarPedido(novoPedido).toPromise().then(res => {
-      this.pedidoService.setIdPedido(res)
+      this.pedidoService.setPedido(res)
       this.ngOnInit()
     }).catch(err => {
       console.log(err);
@@ -107,11 +107,16 @@ export class PedidosComponent implements OnInit {
   }
 
   verificarSeJaFezPedido(): boolean {
-    if (localStorage.getItem('ID_PEDIDO') == null) {
+    if (localStorage.getItem('PEDIDO') == null) {
       return false
     } else {
       return true;
     }
+  }
+
+  sair() {
+    window.localStorage.clear()
+    this.router.navigate([''])
   }
 
 }

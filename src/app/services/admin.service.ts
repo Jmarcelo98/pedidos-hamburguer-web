@@ -8,7 +8,7 @@ import { Admin } from '../models/admin';
 })
 export class AdminService {
 
-  private readonly URL_API = `${environment.URL_RAIZ}/admin`
+  private readonly URL_API = `${environment.URL_RAIZ}/usuario`
 
   private readonly STORAGE_ADMIN = "ADMIN"
 

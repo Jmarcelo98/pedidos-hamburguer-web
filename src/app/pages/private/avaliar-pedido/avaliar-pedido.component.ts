@@ -1,8 +1,9 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Avaliacao } from 'src/app/models/avaliacao';
 import { Usuario } from 'src/app/models/usuario';
+import { AvaliarService } from 'src/app/services/avaliar.service';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -13,7 +14,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class AvaliarPedidoComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService, private formBuilder: FormBuilder, private pedidoService: PedidoService) { }
+  constructor(private usuarioService: UsuarioService, private formBuilder: FormBuilder,
+    private pedidoService: PedidoService, private avaliarService: AvaliarService,
+    private router: Router) { }
 
   usuario: Usuario
 
@@ -22,7 +25,7 @@ export class AvaliarPedidoComponent implements OnInit {
   formAvaliacao = this.formBuilder.group({
     nota: [this.valorAvaliacao],
     avaliacao: [null]
-  }) 
+  })
 
   ngOnInit(): void {
 
@@ -35,14 +38,21 @@ export class AvaliarPedidoComponent implements OnInit {
   }
 
   avaliar() {
-    
+
     const avaliacao: Avaliacao = {
       id: 0,
       nota: this.f.nota.value,
       avaliacao: this.f.avaliacao.value,
-      idPedido: this.pedidoService.getIdPedido(),
+      idPedido: this.pedidoService.getPedido(),
       usuario: this.usuarioService.getUsuario()
-    } 
+    }
+
+    this.avaliarService.avaliarPedido(avaliacao).subscribe(res => {
+      this.pedidoService.limparPedidoLocalStorage()
+      this.router.navigate(['criar-pedido']);
+    }, err => {
+      console.log(err);
+    })
 
   }
 

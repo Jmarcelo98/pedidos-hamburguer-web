@@ -10,7 +10,7 @@ export class PedidoService {
 
   private readonly URL_API = `${environment.URL_RAIZ}/pedido`
 
-  private readonly STORAGE_ID_PEDIDO = "ID_PEDIDO";
+  private readonly STORAGE_PEDIDO = "PEDIDO";
 
   idPedido: number
 
@@ -28,16 +28,20 @@ export class PedidoService {
     return this.httpClient.put(`${this.URL_API}/finalizar`, idPedido)
   }
 
-  setIdPedido(id: number) {
-    localStorage.setItem(this.STORAGE_ID_PEDIDO, window.btoa(JSON.stringify(id)));
+  setPedido(idPedido: number) {
+    localStorage.setItem(this.STORAGE_PEDIDO, window.btoa(JSON.stringify(idPedido)));
   }
 
-  getIdPedido(): number {
-    return this.idPedido = JSON.parse(window.atob(window.localStorage.getItem(this.STORAGE_ID_PEDIDO) || ''))
+  getPedido(): number {
+    return this.idPedido = JSON.parse(window.atob(window.localStorage.getItem(this.STORAGE_PEDIDO) || ''))
+  }
+
+  limparPedidoLocalStorage() {
+    localStorage.removeItem(this.STORAGE_PEDIDO)
   }
 
   public fezPedido(): boolean {
-    const admin = localStorage.getItem(this.STORAGE_ID_PEDIDO)
+    const admin = localStorage.getItem(this.STORAGE_PEDIDO)
     if (admin == null) {
       return false;
     }
