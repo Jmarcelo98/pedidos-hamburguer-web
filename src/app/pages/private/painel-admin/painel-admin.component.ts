@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmacaoDialogComponent } from 'src/app/component/confirmacao-dialog/confirmacao-dialog.component';
 import { Admin } from 'src/app/models/admin';
 import { Pedido } from 'src/app/models/pedido';
-import { AdminService } from 'src/app/services/admin.service';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { MensagensService } from 'src/app/services/util/mensagens.service';
 
@@ -20,7 +21,8 @@ export class PainelAdminComponent implements OnInit {
   aceita = "SIM"
   recusa = "NÃO"
 
-  constructor(private pedidoService: PedidoService, private mensagem: MensagensService) { }
+  constructor(private pedidoService: PedidoService, private mensagem: MensagensService,
+    private confirmacaoDialog: MatDialog) { }
 
   async ngOnInit() {
 
@@ -42,15 +44,25 @@ export class PainelAdminComponent implements OnInit {
 
   async finalizarPedido(pedido: Pedido) {
 
-    pedido.concluido = true;
+    this.confirmacaoDialog.open(ConfirmacaoDialogComponent).afterClosed().subscribe(confirm => {
+      if (confirm) {
+        pedido.concluido = true;
 
-    await this.pedidoService.finalizarPedido(pedido.id).toPromise().then(res => {
-      this.mensagem.sucesso("Pedido finalizado! Entregue-o para " + pedido.usuarioDTO.nome + " " + pedido.usuarioDTO.sobrenome);
-      this.buscasPedidosEmEspera();
-    }).catch(err => {
-      console.log("erro");
+        this.pedidoService.finalizarPedido(pedido.id).toPromise().then(res => {
+          this.mensagem.sucesso("Pedido finalizado! Entregue-o para " + pedido.usuarioDTO.nome + " " + pedido.usuarioDTO.sobrenome);
+          this.buscasPedidosEmEspera();
+        }).catch(err => {
+          console.log("erro");
+
+        })
+
+
+      }
 
     })
+
+
+
 
   }
 

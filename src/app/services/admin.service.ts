@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { environmentProd } from 'src/environments/environment.prod';
 import { Admin } from '../models/admin';
 
 @Injectable({
@@ -9,11 +8,7 @@ import { Admin } from '../models/admin';
 })
 export class AdminService {
 
-  // localhost
   private readonly URL_API = `${environment.URL_RAIZ}/admin`
-
-  // na rede
-  // private readonly URL_API = `${environmentProd.URL_RAIZ}/usuario`
 
   private readonly STORAGE_ADMIN = "ADMIN"
 

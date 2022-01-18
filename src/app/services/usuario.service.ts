@@ -9,12 +9,7 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  // localhost
   private readonly URL_API = `${environment.URL_RAIZ}/usuario`
-
-  // na rede
-  // private readonly URL_API = `${environmentProd.URL_RAIZ}/usuario`
-
 
   private readonly STORAGE_USUARIO = "USUARIO";
 

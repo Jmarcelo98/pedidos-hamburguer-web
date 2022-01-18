@@ -2,15 +2,48 @@
     margin-top: 12.5em;
 }
 
+#inputTextArea {
+    text-align: -webkit-center;
+}
+
 ngb-rating {
     color: #FFC107;
     font-size: 50px;
 }
 
-ol, ul {
+textarea {
+    width: 50%;
+}
+
+/* ol, ul {
     margin-left: 33em;
+}*/
+
+tr>td {
+    text-align: start;
+}
+
+.startTabela {
+    text-align: start;
 }
 
 li {
-    display: flex;
+    display: block;
+} 
+
+
+@media screen and (max-width: 950px) {
+
+    textarea {
+        width: 100%;
+    } 
+    
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #espacamento {
+        margin-top: 2.5em;
+    }
 }

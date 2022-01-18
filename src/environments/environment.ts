@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   URL_RAIZ: "http://localhost:8080",
+  // URL_RAIZ: "http://192.168.1.64:8080",
   ACRESCENTAR: "ACRESCENTAR",
 };
 

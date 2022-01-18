@@ -6,20 +6,65 @@
         Avalie seu pedido!
     </div>
     <div class="card-body">
-        
-        <ul>
-            <li>5 - Muito satisfeito(a)</li>
-            <li>4 - Satisfeito(a)</li>
-            <li>3 - Bom</li>
-            <li>2 - Insatisfeito(a)</li>
-            <li>1 - Muito insatisfeito(a)</li>
-        </ul>
+
+        <div class="row justify-content-md-center">
+
+            <div class="col-12  col-xxl-6">
+
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">NOTA</th>
+                            <th scope="col" class="startTabela">LEGENDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>5</th>
+                            <td>Muito satisfeito(a)</td>
+                        </tr>
+
+                        <tr>
+                            <th>4</th>
+                            <td>Satisfeito(a)</td>
+                        </tr>
+
+                        <tr>
+                            <th>3</th>
+                            <td>Bom</td>
+                        </tr>
+
+                        <tr>
+                            <th>2</th>
+                            <td>Insatisfeito(a)</td>
+                        </tr>
+
+                        <tr>
+                            <th>1</th>
+                            <td>Muito insatisfeito(a)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
 
         <ngb-rating [max]="5" [(rate)]="valorAvaliacao"></ngb-rating>
+
+        <form [formGroup]="formAvaliacao">
+            <div id="inputTextArea">
+                <label for="exampleFormControlTextarea1">Deixe sua mensagem</label>
+                <textarea maxlength="255" class="form-control" id="exampleFormControlTextarea1" formControlName="avaliacao"
+                    placeholder="Ex: Estava ótimo, ponto da carne veio como foi pedido!" rows="3"></textarea>
+            </div>
+        </form>
+
         <hr>
         <pre>Nota: <b>{{valorAvaliacao}}</b></pre>
 
-        <button class="btn btn-primary">Avaliar</button>
+        <button class="btn btn-primary" (click)="avaliar()">Avaliar</button>
 
     </div>
     <div class="card-footer text-muted">

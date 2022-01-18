@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'avaliar',
     component: AvaliarPedidoComponent,
-    canActivate: [AutenticacaoPedido]
+    // canActivate: [AutenticacaoPedido]
   }
 ];
 
